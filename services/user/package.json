@@ -1,0 +1,6 @@
+{
+  "name": "@neueparti/user",
+  "main": "user.js",
+  "version": "1.0.0",
+  "private": true
+}

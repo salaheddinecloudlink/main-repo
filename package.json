@@ -1,0 +1,100 @@
+{
+  "name": "@neueparti/neuestart",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "STAGE=test jest",
+    "test-coverage": "STAGE=test jest --coverage",
+    "test-packages": "STAGE=test jest ./packages",
+    "test-services": "STAGE=test jest ./services",
+    "test-libs": "jest ./libs",
+    "precommit": "lint-staged",
+    "dev": "RUN_SCHEDULER=false sls offline",
+    "dev-full": "RUN_SCHEDULER=true yarn sls offline",
+    "dev-server": "yarn start-db && yarn dev",
+    "start-db": "mongod --mongod --dbpath ./mongo-data >> /dev/null",
+    "stop-db": "lsof -i tcp:27017 | awk '{print $2}' | grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox} -v 'PID' | xargs kill",
+    "db-admin": "yarn babel-node packages/data-access/admin",
+    "db-admin-alpha": "yarn babel-node packages/data-access/admin alpha",
+    "db-admin-beta": "yarn babel-node packages/data-access/admin beta",
+    "db-admin-prod": "yarn babel-node packages/data-access/admin prod",
+    "migrations": "npx babel-node migrations",
+    "debug": "export SLS_DEBUG=* && node --inspect serverless offline"
+  },
+  "prettier": "prettier-config-standard",
+  "pre-commit": "lint-staged",
+  "lint-staged": {
+    "*": "prettier --ignore-unknown -w",
+    "*.js": "eslint --color --fix"
+  },
+  "repository": "git@github.com:Neue-Parti/neuestart.git",
+  "author": "Michael W. Clark",
+  "license": "None",
+  "bugs": {
+    "url": "https://github.com/Neue-Parti/neuestart/issues"
+  },
+  "homepage": "https://github.com/Neue-Parti/neuestart#readme",
+  "workspaces": [
+    "frontend/",
+    "packages/*",
+    "services/*"
+  ],
+  "devDependencies": {
+    "@aws-sdk/client-cloudformation": "^3.185.0",
+    "@babel/core": "^7.4.5",
+    "@babel/eslint-parser": "^7.18.9",
+    "@babel/node": "7.19.1",
+    "@babel/preset-env": "^7.4.5",
+    "@faker-js/faker": "^7.3.0",
+    "@neueparti/eslint-config-neue": "*",
+    "@types/node": "^18.7.17",
+    "babel-jest": "^29.0.3",
+    "chance": "^1.1.8",
+    "csv": "^6.2.0",
+    "husky": "^8.0.1",
+    "jest": "^29.0.3",
+    "js-yaml": "^4.1.0",
+    "lerna": "^5.5.1",
+    "lint-staged": "^13.0.3",
+    "mongodb-memory-server": "^8.8.0",
+    "pre-commit": "^1.2.2",
+    "prettier-config-standard": "^5.0.0",
+    "prettier": "^2.7.1",
+    "serverless-add-api-key": "^4.2.1",
+    "serverless-bundle": "5.5.0",
+    "serverless-offline-aws-eventbridge": "^2.0.3",
+    "serverless-offline": "^11.0.1",
+    "serverless": "^3.22.0"
+  },
+  "private": true,
+  "standard": {
+    "globals": [
+      "test",
+      "expect",
+      "it",
+      "describe",
+      "jest"
+    ]
+  },
+  "dependencies": {
+    "@babel/eslint-parser": "^7.18.9",
+    "@babel/plugin-transform-runtime": "^7.18.6",
+    "@neueparti/ci-utils": "*",
+    "@neueparti/create-lambda-handler": "*",
+    "@neueparti/data-access": "*",
+    "@neueparti/errors": "*",
+    "@neueparti/neue-utils": "*",
+    "aws-sdk": "^2.1204.0",
+    "axios": "^0.27.2",
+    "bunyan": "^1.8.15",
+    "graphql": "^16.0.0",
+    "graphql-compose": "^9.0.4",
+    "graphql-compose-mongoose": "^9.7.0",
+    "mongoose": "^6.5.3"
+  },
+  "resolutions": {
+    "graphql": "^16.0.0"
+  },
+  "engines": {
+    "node": ">=16.17.0"
+  }
+}

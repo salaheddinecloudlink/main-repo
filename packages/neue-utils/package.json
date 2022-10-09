@@ -1,0 +1,7 @@
+{
+  "name": "@neueparti/neue-utils",
+  "version": "1.0.0",
+  "description": "generic utility functions.",
+  "main": "index.js",
+  "author": "Michael W. Clark"
+}

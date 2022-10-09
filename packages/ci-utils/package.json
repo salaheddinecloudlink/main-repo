@@ -1,0 +1,7 @@
+{
+  "name": "@neueparti/ci-utils",
+  "version": "1.0.0",
+  "description": "generic ci utility functions.",
+  "main": "index.js",
+  "author": "Michael W. Clark"
+}

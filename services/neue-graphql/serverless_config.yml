@@ -1,0 +1,12 @@
+functions:
+  graphql:
+    name: neue-parti-adjustant-${sls:stage}-${self:service}
+    handler: graphqlHandler.handler
+    timeout: 30
+    provisionedConcurrency: 1
+    reservedConcurrency: 200
+    events:
+      - http:
+          path: /graphql
+          method: ANY
+          # private: true

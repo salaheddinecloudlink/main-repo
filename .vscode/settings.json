@@ -1,0 +1,35 @@
+{
+  "prettier.embeddedLanguageFormatting": "auto",
+  "eslint.codeActionsOnSave.mode": "all",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "eslint.probe": [
+      "javascript",
+  ],
+  // Runs Prettier, then ESLint
+  "editor.codeActionsOnSave": [
+    "source.formatDocument",
+    "source.fixAll.eslint",
+
+  ],
+  "vetur.validation.template": false,
+  "eslint.alwaysShowStatus": true,
+  "editor.formatOnSave": true,
+  // turn it off for JS and JSX, we will do this via eslint
+  "[javascript, javascriptreact]": {
+    "editor.formatOnSave": false
+  },
+  "files.exclude": {
+    "**/mongo-data": true,
+    "**/node_modules": true,
+    "**/.webpack": true
+  },
+  "files.watcherExclude": {
+    "**/mongo-data/**": true,
+    "**/.webpack": true
+  },
+  "search.exclude": {
+    "**/mongo-data/**": true,
+    "**/.webpack": true
+  },
+
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base", ":dependencyDashboard", ":rebaseStalePrs"],
+  "schedule": ["before 3am every weekday"],
+  "enabledManagers": ["npm", "dockerfile", "github-actions", "docker-compose"],
+  "packageRules": [
+    {
+      "matchPackagePrefixes": ["@babel", "babel-"],
+      "groupName": "Babel"
+    },
+    {
+      "matchPackagePrefixes": ["eslint"],
+      "groupName": "ESLint"
+    },
+    {
+      "matchPackagePrefixes": ["serverless"],
+      "groupName": "Serverless"
+    },
+    {
+      "matchPackagePrefixes": ["@storybook"],
+      "groupName": "Storybook"
+    },
+    {
+      "matchPackagePrefixes": ["webpack"],
+      "groupName": "Webpack"
+    },
+    {
+      "matchPackagePrefixes": ["typescript", "ts"],
+      "groupName": "Typescript"
+    },
+    {
+      "matchPackagePrefixes": ["@types"],
+      "groupName": "Types"
+    },
+    {
+      "matchPackagePrefixes": ["react", "@react"],
+      "groupName": "React"
+    },
+
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "groupName": "Minor Packages",
+      "automerge": true
+    }
+  ]
+}

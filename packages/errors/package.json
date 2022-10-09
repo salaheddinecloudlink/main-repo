@@ -1,0 +1,7 @@
+{
+  "name": "@neueparti/errors",
+  "version": "1.0.0",
+  "description": "generic error classes.",
+  "main": "errors.js",
+  "author": "Michael W. Clark"
+}

@@ -1,0 +1,33 @@
+staging:
+  provider:
+    apiGateway:
+      restApiId: upg0tozuej
+      restApiRootResourceId: p1y3ide1pj
+    logRetentionInDays: 3
+    vpc:
+      securityGroupIds:
+        - sg-08f537e09209183e9
+      subnetIds:
+        - subnet-08cf7f21e2e91e0dc
+        - subnet-063dc8b9d3aa92a97
+        - subnet-016f4efb5074934d5
+        - subnet-04b26fd3d9b1f8582
+        - subnet-0a86cf4d57263ffda
+        - subnet-032d0cdcbd68aa54d
+
+prod:
+  provider:
+    apiGateway:
+      restApiId: ebzr29zgk3
+      restApiRootResourceId: fo8l2d8u61
+  logRetentionInDays: 14
+  vpc:
+    securityGroupIds:
+      - sg-048bbefd8792cb27d
+    subnetIds:
+      - subnet-0338132a7110a745a
+      - subnet-07ab258b517fa077e
+      - subnet-0e04ee2932272af10
+      - subnet-0d7dd6a55af6b7c3f
+      - subnet-0350d4d668955f47e
+      - subnet-092c9562a413d26de

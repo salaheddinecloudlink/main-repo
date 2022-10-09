@@ -1,0 +1,8 @@
+{
+  "name": "@neueparti/data-access",
+  "version": "1.0.0",
+  "description": "DAL Package for Atlas.",
+  "main": "dataAccess.js",
+  "author": "Michael W. Clark",
+  "private": true
+}

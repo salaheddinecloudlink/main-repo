@@ -1,0 +1,29 @@
+functions:
+  userLogin:
+    name: user-login-${sls:stage}-${self:service}
+    handler: userLogin.handler
+    reservedConcurrency: 20
+    timeout: 20
+    events:
+      - http:
+          path: /user-login
+          method: POST
+          private: true
+  userRegister:
+    name: lambda-framework-${sls:stage}-${self:service}
+    handler: userRegister.handler
+    reservedConcurrency: 20
+    timeout: 20
+    events:
+      - http:
+          path: /user-register
+          method: POST
+          private: true
+      - eventBridge:
+          eventBus: ${param:EVENT_BUS_ARN}
+          pattern:
+            detail-type:
+              - USER_REGISTER
+          retryPolicy:
+            maximumEventAge: 600
+            maximumRetryAttempts: 0

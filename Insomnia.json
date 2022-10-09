@@ -1,0 +1,218 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2022-10-08T22:07:44.995Z",
+  "__export_source": "insomnia.desktop.app:v2022.6.0",
+  "resources": [
+    {
+      "_id": "req_a180b4bb3df04ce9bd845563769b77cb",
+      "parentId": "fld_6e9341756596466da796646a9f66848a",
+      "modified": 1665266818336,
+      "created": 1665263427585,
+      "url": "http://localhost:3000/dev/graphql",
+      "name": "Get Users",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"query GetUsers {\\n\\tUserMany\\n\\t\\t{\\n\\t\\t\\t_id\\n\\t\\t\\temail\\n\\t\\t\\tcompanyId\\n\\t\\t\\tcreatedAt\\n\\t\\t\\tupdatedAt\\n\\t\\t\\tcompany{\\n\\t\\t\\t\\t_id\\n\\t\\t\\t\\tname\\n\\t\\t\\t\\tcreatedAt\\n\\t\\t\\t\\tupdatedAt\\n\\t\\t\\t}\\n\\t\\t}\\n}\",\"operationName\":\"GetUsers\"}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_64e87c58606b4808b0062b3a171f77f0"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1665263284932,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_6e9341756596466da796646a9f66848a",
+      "parentId": "wrk_84e3823f39064f029cc280d15edb2810",
+      "modified": 1665263283486,
+      "created": 1665263283486,
+      "name": "User",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1665263283486,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_84e3823f39064f029cc280d15edb2810",
+      "parentId": null,
+      "modified": 1664157644518,
+      "created": 1664157644518,
+      "name": "Adjustant",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_0dbe7b08eda947f8b092cd3d7dc292ae",
+      "parentId": "fld_6e9341756596466da796646a9f66848a",
+      "modified": 1665263519847,
+      "created": 1665263292433,
+      "url": "http://localhost:3000/dev/graphql",
+      "name": "Create User",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"mutation CreateUser {\\n\\tUserCreateOne(record: {\\n\\t\\temail: \\\"test@test.com\\\"\\n\\t\\tcompanyId: \\\"6341e67726552e5ebc347283\\\"\\n\\t}){\\n\\t\\trecord{\\n\\t\\t\\t_id\\n\\t\\t\\temail\\n\\t\\t\\tcompany{\\n\\t\\t\\t\\tname\\n\\t\\t\\t}\\t\\t\\n\\t\\t}\\n\\t}\\n}\",\"operationName\":\"CreateUser\"}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_64e87c58606b4808b0062b3a171f77f0"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1665263284882,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_73d779a4af584bedae9e0b4fc81cf351",
+      "parentId": "fld_c11554e0cacb4d1b854e438d7852fb36",
+      "modified": 1665263287828,
+      "created": 1664157821414,
+      "url": "http://localhost:3000/dev/graphql",
+      "name": "Create Company",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"mutation CreateCompany {\\n\\tCompanyCreateOne(record: {\\n\\t\\tname: \\\"Acme Company\\\"\\n\\t}){\\n\\t\\trecord{\\n\\t\\t\\t_id\\n\\t\\t\\tname\\n\\t\\t\\tcreatedAt\\n\\t\\t}\\n\\t}\\n}\",\"operationName\":\"CreateCompany\"}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_64e87c58606b4808b0062b3a171f77f0"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1664157821414,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_c11554e0cacb4d1b854e438d7852fb36",
+      "parentId": "wrk_84e3823f39064f029cc280d15edb2810",
+      "modified": 1665263240062,
+      "created": 1665263240062,
+      "name": "Company",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1665263240063,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_8f5855de595541608f216c15675479f5",
+      "parentId": "fld_c11554e0cacb4d1b854e438d7852fb36",
+      "modified": 1665263539567,
+      "created": 1665263350164,
+      "url": "http://localhost:3000/dev/graphql",
+      "name": "Get Companies",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"query GetCompanies {\\n\\tCompanyMany\\n\\t\\t{\\n\\t\\t\\t_id\\n\\t\\t\\tname\\n\\t\\t\\tcreatedAt\\n\\t\\t\\tusers{\\n\\t\\t\\t\\t_id\\n\\t\\t\\t\\temail\\n\\t\\t\\t}\\n\\t\\t}\\n}\",\"operationName\":\"GetCompanies\"}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_64e87c58606b4808b0062b3a171f77f0"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1664157820031.25,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_1d338b5d0deb48a401c7d887a5673a5ead93b117",
+      "parentId": "wrk_84e3823f39064f029cc280d15edb2810",
+      "modified": 1664157648971,
+      "created": 1664157644544,
+      "name": "Base Environment",
+      "data": {},
+      "dataPropertyOrder": {},
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1664157644544,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_1d338b5d0deb48a401c7d887a5673a5ead93b117",
+      "parentId": "wrk_84e3823f39064f029cc280d15edb2810",
+      "modified": 1664157644549,
+      "created": 1664157644549,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_76b0e6a29f7f402ca3edf52c8c976ee1",
+      "parentId": "wrk_84e3823f39064f029cc280d15edb2810",
+      "modified": 1664157644530,
+      "created": 1664157644530,
+      "fileName": "Adjustant",
+      "contents": "",
+      "contentType": "yaml",
+      "_type": "api_spec"
+    },
+    {
+      "_id": "env_58bc38781ef849759b69e45706fd2b0c",
+      "parentId": "env_1d338b5d0deb48a401c7d887a5673a5ead93b117",
+      "modified": 1664159289208,
+      "created": 1664157653427,
+      "name": "Local",
+      "data": {
+        "base_url": "http://localhost:3000/dev",
+        "api_key": "d41d8cd98f00b204e9800998ecf8427e"
+      },
+      "dataPropertyOrder": { "&": ["base_url", "api_key"] },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1664157653427,
+      "_type": "environment"
+    }
+  ]
+}

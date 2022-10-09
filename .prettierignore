@@ -1,0 +1,6 @@
+.serverless/
+.sourcemaps/
+.vscode/
+.webpack/
+mongo-data/
+node_modules/

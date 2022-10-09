@@ -1,0 +1,6 @@
+{
+  "name": "@neueparti/neue-graphql",
+  "version": "1.0.0",
+  "main": "graphqlHandler.js",
+  "private": true
+}
